@@ -10,45 +10,138 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 10px 10px;
+}
+
+.header__iconSearch {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.header__iconSearch:focus {
+  outline: none;
+  border: 1px solid #fff;
 }
 
 .header__input {
-  display: none;
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
   height: 10px;
-  padding: 8px;
+  width: 200px;
+  left: 40px;
+  padding: 12px 10px;
+  margin-left: 10px;
   color: #fff;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #fff;
   background-color: transparent;
-  outline: none;
-  font-size: 16px;
+  font-size: 20px;
+  /* transition: 0.3s; */
+}
+
+.header__addSearch {
+  visibility: visible;
+  transition: 0.3s;
+  /* padding: 12px 10px;
+  width: 20%; */
 }
 
 .fa-search {
   color: #fff;
-  cursor: pointer;
-  padding: 5px;
   font-size: 30px;
 }
 
 .header__img {
+  visibility: visible;
   max-height: 40px;
 }
 
-.section {
-  height: 480px;
+.header__imgHidden{
+  visibility: hidden;
 }
 
-.section__img {
+.header__burger-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.header__burger-btn:focus {
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.header__burger-btn__box {
+  position: relative;
+  height: 20px;
+  width: 30px;
+}
+
+.header__burger-btn__bars,
+.header__burger-btn__bars::before,
+.header__burger-btn__bars::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  height: 3px;
+  background-color: #fff;
+  transition: width 0.3s;
+}
+
+.header__burger-btn__bars {
+  width: 100%;
+}
+
+.header__burger-btn__bars::before {
+  top: 20px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.header__burger-btn__bars::after {
+  top: 10px;
+  width: 60%;
+}
+
+.header__burger-btn:hover .header__burger-btn__bars::after,
+.header__burger-btn:hover .header__burger-btn__bars::before {
+  width: 100%;
+}
+
+.sectionOne__img {
   width: 100%;
   height: 100%;
-  background-image: url("./img/header.jpg");
-  background-position: center;
-  background-size: cover;
+}
+
+
+
+@media (max-width: 768px) {
+  .header__img {
+    max-height: 30px;
+  }
+
+  .header__input{
+    width: 150px;
+  }
+
+  .sectionOne__img {
+    background-image: url("./img/headerMini.jpg");
+  }
+}
+
+@media(max-width: 576px){
+  .header__input {
+    width: 200px;
+  }
 }

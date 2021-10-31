@@ -1,14 +1,15 @@
 const search = document.querySelector('.fa-search');
 const headerInput = document.querySelector('.header__input');
+const headerImg = document.querySelector('.header__img');
+const mediaQuery = window.matchMedia('max-widht: 576px');
 
 
 search.addEventListener('click', () =>{
-    if(headerInput.style.display == 'none'){
-        headerInput.style.display = 'inline-block';
-        headerInput.style.transition = 0.3 + 's';
+    headerInput.classList.toggle('header__addSearch');
+    if(window.innerWidth <= 576){
+        headerImg.classList.toggle('header__imgHidden')
     }
     else{
-        headerInput.style.display = 'none';
-        headerInput.style.transition = 0.3 + 's';
+        headerImg.classList.remove('header__imgHidden')
     }
 })
