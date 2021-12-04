@@ -256,6 +256,15 @@ header{
   font-weight: bold;
 }
 
+.fa-plus{
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.fa-plus:hover{
+  transform: scale(1.1);
+}
+
 .sectionFour{
   display: flex;
   justify-content: center;
@@ -296,6 +305,8 @@ header{
 }
 
 .txtImg{
+  display: flex;
+  flex-direction: column;
   width: 50%;
   margin: 5px 10px;
   padding: 10px 20px;
@@ -314,10 +325,12 @@ header{
 
 .btnImg{
   padding: 15px 30px;
+  margin: 10px 5px;
   border: transparent;
   border-radius: 8px;
   background: #000;
   transition: background .3s;
+  cursor: pointer;
 }
 
 .btnImg:hover{
@@ -343,8 +356,24 @@ header{
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  margin: 10px 0;
   padding: 10px 0;
   color: #fff;
+}
+
+@media(max-width:992px){
+
+  .sectionFour__Image{
+    flex-direction: column;
+  }
+
+  .txtImg{
+    width: 100%;
+  }
+
+  .btnImg{
+    margin: 10px auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -358,6 +387,10 @@ header{
 
   .sectionOne__img {
     background-image: url("./img/headerMini.jpg");
+  }
+
+  .footer{
+    justify-content: center;
   }
 }
 
